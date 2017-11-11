@@ -91,8 +91,12 @@ WSGI_APPLICATION = 'hotel.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'hotel',
+        'USER': 'nilesh',
+        'PASSWORD': 'nilesh',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -137,3 +141,5 @@ STATIC_URL = '/static/'
 
 LOGOUT_REDIRECT_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
